@@ -75,7 +75,10 @@ main()
  passport.serializeUser(User.serializeUser());
  passport.deserializeUser(User.deserializeUser());
 
-
+// for home route
+app.get("/",(req,res)=>{
+   res.redirect("/listings");
+});
  // middleware for flash
  app.use((req,res,next)=>{
     res.locals.success = req.flash('success');
