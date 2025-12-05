@@ -38,7 +38,11 @@ main()
 });
 
  async function main(){
-    await mongoose.connect(dbUrl);
+    await mongoose.connect(dbUrl,{
+       useNewUrlParser:true,
+       useUnifiedTopology:true,
+       tlsAllowInvalidCertificates:true,
+    });
  }
 
  const store = MongoStore.create({
