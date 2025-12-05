@@ -38,10 +38,7 @@ main()
 });
 
  async function main(){
-    await mongoose.connect(dbUrl,{
-      ssl:true,
-       sslValidate:false,
-    });
+    await mongoose.connect(dbUrl);
  }
 
  const store = MongoStore.create({
